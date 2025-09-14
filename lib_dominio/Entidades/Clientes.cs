@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace lib_dominio.Entidades
 {
-    internal class Clientes
+    public class Clientes
     {
+        public int Id { get; set; }
+        public string? Nombre { get; set; }
     }
 }
