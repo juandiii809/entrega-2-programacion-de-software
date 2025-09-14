@@ -8,7 +8,8 @@ namespace lib_repositorios.Interfaces
     {
         string? StringConexion { get; set; }
 
-        DbSet<Comidas>? Comidas { get; set; }
+        DbSet<Garantias>? Garantias { get; set; }
+
 
         EntityEntry<T> Entry<T>(T entity) where T : class;
         int SaveChanges();
