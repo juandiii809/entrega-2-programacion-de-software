@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace lib_dominio.Entidades
 {
-    public class Orden_Servicios
+    public class Orden_servicios
     {
         public int Id { get; set; }
         public bool Estado { get; set; }
@@ -19,7 +19,7 @@ namespace lib_dominio.Entidades
         public Clientes? Clientes { get; set; }
         public Empleados? Empleados { get; set; }
 
-        public List<Orden_Productos>? Productos;
+        public List<Orden_productos>? Productos;
 
         public List<Facturas>? Facturas;
     }
