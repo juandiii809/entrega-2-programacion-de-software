@@ -10,10 +10,9 @@ namespace lib_repositorios.Interfaces
     public class IGarantiasAplicacion
     {
         void Configurar(string StringConexion);
-        List<Notas> PorEstudiante(Notas? entidad);
-        List<Notas> Listar();
-        Notas? Guardar(Notas? entidad);
-        Notas? Modificar(Notas? entidad);
-        Notas? Borrar(Notas? entidad);
+        List<Garantias> Listar();
+        Garantias? Guardar(Garantias? entidad);
+        Garantias? Modificar(Garantias? entidad);
+        Garantias? Borrar(Garantias? entidad);
     }
 }

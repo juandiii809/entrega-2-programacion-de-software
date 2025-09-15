@@ -1,4 +1,5 @@
-﻿using System;
+﻿using lib_dominio.Entidades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,10 +10,9 @@ namespace lib_repositorios.Interfaces
     public class IServiciosAplicacion
     {
         void Configurar(string StringConexion);
-        List<Notas> PorEstudiante(Notas? entidad);
-        List<Notas> Listar();
-        Notas? Guardar(Notas? entidad);
-        Notas? Modificar(Notas? entidad);
-        Notas? Borrar(Notas? entidad);
+        List<Servicios> Listar();
+        Servicios? Guardar(Servicios? entidad);
+        Servicios? Modificar(Servicios? entidad);
+        Servicios? Borrar(Servicios? entidad);
     }
 }

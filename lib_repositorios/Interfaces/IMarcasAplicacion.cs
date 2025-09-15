@@ -1,5 +1,7 @@
-﻿using System;
+﻿using lib_dominio.Entidades;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,10 +11,9 @@ namespace lib_repositorios.Interfaces
     public class IMarcasAplicacion
     {
         void Configurar(string StringConexion);
-        List<Notas> PorEstudiante(Notas? entidad);
-        List<Notas> Listar();
-        Notas? Guardar(Notas? entidad);
-        Notas? Modificar(Notas? entidad);
-        Notas? Borrar(Notas? entidad);
+        List<Marcas> Listar();
+        Marcas? Guardar(Marcas? entidad);
+        Marcas? Modificar(Marcas? entidad);
+        Marcas? Borrar(Marcas? entidad);
     }
 }

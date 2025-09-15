@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace lib_repositorios.Implementaciones
 {
-    public class GarantiasAplicacion: IGarantiasAplicacion
+    public class PuestosAplicacion : IPuestosAplicacion
     {
         private IConexion? IConexion = null;
 
-        public GarantiasAplicacion(IConexion iConexion)
+        public PuestosAplicacion(IConexion iConexion)
         {
             this.IConexion = iConexion;
         }
@@ -23,43 +23,43 @@ namespace lib_repositorios.Implementaciones
             this.IConexion!.StringConexion = StringConexion;
         }
 
-        public Garantias? Borrar(Garantias? entidad)
+        public Puestos? Borrar(Puestos? entidad)
         {
             if (entidad == null)
                 throw new Exception("lbFaltaInformacion");
             if (entidad!.Id == 0)
                 throw new Exception("lbNoSeGuardo");
             // Operaciones
-            this.IConexion!.Garantias!.Remove(entidad);
+            this.IConexion!.Puestos!.Remove(entidad);
             this.IConexion.SaveChanges();
             return entidad;
         }
 
-        public Garantias? Guardar(Garantias? entidad)
+        public Puestos? Guardar(Puestos? entidad)
         {
             if (entidad == null)
                 throw new Exception("lbFaltaInformacion");
             if (entidad.Id != 0)
                 throw new Exception("lbYaSeGuardo");
             // Operaciones
-            this.IConexion!.Garantias!.Add(entidad);
+            this.IConexion!.Puestos!.Add(entidad);
             this.IConexion.SaveChanges();
             return entidad;
         }
 
-        public List<Garantias> Listar()
+        public List<Puestos> Listar()
         {
-            return this.IConexion!.Garantias!.Take(20).ToList();
+            return this.IConexion!.Puestos!.Take(20).ToList();
         }
 
-        public Garantias? Modificar(Garantias? entidad)
+        public Puestos? Modificar(Puestos? entidad)
         {
             if (entidad == null)
                 throw new Exception("lbFaltaInformacion");
             if (entidad!.Id == 0)
                 throw new Exception("lbNoSeGuardo");
             // Operaciones
-            var entry = this.IConexion!.Entry<Garantias>(entidad);
+            var entry = this.IConexion!.Entry<Puestos>(entidad);
             entry.State = EntityState.Modified;
             this.IConexion.SaveChanges();
             return entidad;
