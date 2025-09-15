@@ -8,7 +8,7 @@ create table [Componentes](
 	[Nombre] nvarchar(30) not null,
 	[Descripcion] nvarchar(100) not null,
 );
-create table [garantias](
+create table [Garantias](
 	[Id] int not null identity(1,1) primary key,
 	[Fecha_inicio] smalldatetime default getdate() not null,
 	[Fecha_fin] smalldatetime not null,
