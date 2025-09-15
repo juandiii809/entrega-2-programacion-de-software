@@ -11,6 +11,8 @@ namespace lib_dominio.Entidades
         public int Id { get; set; }
         public DateTime Fecha { get; set; }
         public decimal Monto { get; set; }
-        public string? Tipo_pago { get; set; }
+        public string? Tipo_Pago { get; set; }
+
+        public List<Facturas>? Facturas;
     }
 }

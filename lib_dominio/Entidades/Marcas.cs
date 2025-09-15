@@ -12,5 +12,7 @@ namespace lib_dominio.Entidades
         public string? Nombre { get; set; }
         public string? Descripcion { get; set; }
 
+        public List<Computadores>? Computadores;
+
     }
 }

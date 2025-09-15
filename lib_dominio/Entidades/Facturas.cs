@@ -8,5 +8,15 @@ namespace lib_dominio.Entidades
 {
     public class Facturas
     {
+        public int Id { get; set; }
+        public DateTime Fecha { get; set; }
+        public string? Descripcion { get; set; }
+        public decimal Valor_total { get; set; }
+        public int Pago { get; set; }
+        public int Garantia { get; set; }
+        public int Orden { get; set; }
+        public Pagos? Pagos { get; set; }
+        public Garantias? Garantias { get; set; }
+        public Orden_Servicios? Orden_Servicios { get; set; }
     }
 }

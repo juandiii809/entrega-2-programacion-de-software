@@ -1,4 +1,5 @@
-﻿using System;
+﻿using lib_dominio.Entidades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,10 @@ namespace lib_repositorios.Interfaces
 {
     public class IComputadores
     {
+        void Configurar(string StringConexion);
+        List<Computadores> Listar();
+        Computadores? Guardar(Computadores? entidad);
+        Computadores? Modificar(Computadores? entidad);
+        Computadores? Borrar(Computadores? entidad);
     }
 }
