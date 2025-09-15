@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace lib_repositorios.Interfaces
 {
-    public class IFacturas
+    public class IProveedoresAplicacion
     {
         void Configurar(string StringConexion);
-        List<Facturas> Listar();
-        Facturas? Guardar(Facturas? entidad);
-        Facturas? Modificar(Facturas? entidad);
-        Facturas? Borrar(Facturas? entidad);
+        List<Proveedores> Listar();
+        Proveedores? Guardar(Proveedores? entidad);
+        Proveedores? Modificar(Proveedores? entidad);
+        Proveedores? Borrar(Proveedores? entidad);
     }
 }
