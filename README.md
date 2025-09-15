@@ -63,3 +63,6 @@ dotnet new console -n Nombre
 
 - Folder | Carpeta 
 - bin\Release\publish
+
+
+holaaaa
