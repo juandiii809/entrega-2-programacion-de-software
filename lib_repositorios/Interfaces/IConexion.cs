@@ -18,8 +18,8 @@ namespace lib_repositorios.Interfaces
         DbSet<Computadores>? Computadores { get; set; }
         DbSet<Inventarios>? Inventarios { get; set; }
         DbSet<Componentes>? Componentes { get; set; }
-        DbSet<Orden_productos>? Orden_Productos { get; set; }
-        DbSet<Orden_servicios>? Orden_Servicios { get; set; }
+        DbSet<Orden_productos>? Orden_productos { get; set; }
+        DbSet<Orden_servicios>? Orden_servicios { get; set; }
         DbSet<Productos>? Productos { get; set; }
         DbSet<Proveedores>? Proveedores { get; set; }
         DbSet<Facturas>? Facturas { get; set; }

@@ -5,9 +5,10 @@ using Microsoft.EntityFrameworkCore;
 using ut_presentacion.Nucleo;
 
 namespace ut_presentacion.Repositorios
+    //cambiar las fechas "absolutamente todas las fechas"
 {
     [TestClass]
-    public class CRUD
+    public class GarantiasPrueba
     {
         private readonly IConexion? iConexion;
         private List<Garantias>? lista;
@@ -16,7 +17,7 @@ namespace ut_presentacion.Repositorios
 
 
 
-        public CRUD()
+        public GarantiasPrueba()
         {
             iConexion = new Conexion();
             iConexion.StringConexion = Configuracion.ObtenerValor("StringConexion");
@@ -42,8 +43,7 @@ namespace ut_presentacion.Repositorios
             // Crear un nuevo Componente de ejemplo
             this.entidad = new Garantias
             {
-                Nombre = "Teclado",
-                Descripcion = "Teclado mecánico de prueba"
+                Fecha_inicio = DateTime.Now
             };
 
             this.iConexion!.Garantias!.Add(this.entidad);
@@ -53,7 +53,7 @@ namespace ut_presentacion.Repositorios
 
         public bool Modificar()
         {
-            this.entidad!.Descripcion = "Teclado mecánico actualizado";
+            this.entidad!.Fecha_fin= DateTime.Now;
             var entry = this.iConexion!.Entry<Garantias>(this.entidad);
             entry.State = EntityState.Modified;
             this.iConexion!.SaveChanges();

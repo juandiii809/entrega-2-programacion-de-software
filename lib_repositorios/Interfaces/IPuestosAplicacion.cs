@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace lib_repositorios.Interfaces
 {
-    public class IPuestosAplicacion
+    public interface IPuestosAplicacion
     {
         void Configurar(string StringConexion);
         List<Puestos> Listar();

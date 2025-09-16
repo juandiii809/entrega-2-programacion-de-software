@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace lib_repositorios.Interfaces
 {
-    public class IGarantiasAplicacion
+    public interface IGarantiasAplicacion
     {
         void Configurar(string StringConexion);
         List<Garantias> Listar();

@@ -7,16 +7,16 @@ using ut_presentacion.Nucleo;
 namespace ut_presentacion.Repositorios
 {
     [TestClass]
-    public class CRUD
+    public class ComponentesPrueba
     {
         private readonly IConexion? iConexion;
-        private List<Clientes>? lista;
-        private Clientes? entidad;
+        private List<Componentes>? lista;
+        private Componentes? entidad;
 
 
+    
 
-
-        public CRUD()
+        public ComponentesPrueba()
         {
             iConexion = new Conexion();
             iConexion.StringConexion = Configuracion.ObtenerValor("StringConexion");
@@ -33,20 +33,20 @@ namespace ut_presentacion.Repositorios
 
         public bool Listar()
         {
-            this.lista = this.iConexion!.Puestos!.ToList();
+            this.lista = this.iConexion!.Componentes!.ToList();
             return lista.Count > 0;
         }
-
+        
         public bool Guardar()
         {
             // Crear un nuevo Componente de ejemplo
-            this.entidad = new Puestos
+            this.entidad = new Componentes
             {
                 Nombre = "Teclado",
                 Descripcion = "Teclado mecánico de prueba"
             };
 
-            this.iConexion!.Puestos!.Add(this.entidad);
+            this.iConexion!.Componentes!.Add(this.entidad);
             this.iConexion!.SaveChanges();
             return true;
         }
@@ -54,7 +54,7 @@ namespace ut_presentacion.Repositorios
         public bool Modificar()
         {
             this.entidad!.Descripcion = "Teclado mecánico actualizado";
-            var entry = this.iConexion!.Entry<Puestos>(this.entidad);
+            var entry = this.iConexion!.Entry<Componentes>(this.entidad);
             entry.State = EntityState.Modified;
             this.iConexion!.SaveChanges();
             return true;
@@ -62,7 +62,7 @@ namespace ut_presentacion.Repositorios
 
         public bool Borrar()
         {
-            this.iConexion!.Puestos!.Remove(this.entidad!);
+            this.iConexion!.Componentes!.Remove(this.entidad!);
             this.iConexion!.SaveChanges();
             return true;
         }

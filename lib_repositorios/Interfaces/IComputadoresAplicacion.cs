@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace lib_repositorios.Interfaces
 {
-    public class IEmpleados
+    public interface IComputadoresAplicacion
     {
         void Configurar(string StringConexion);
-        List<Empleados> Listar();
-        Empleados? Guardar(Empleados? entidad);
-        Empleados? Modificar(Empleados? entidad);
-        Empleados? Borrar(Empleados? entidad);
+        List<Computadores> Listar();
+        Computadores? Guardar(Computadores? entidad);
+        Computadores? Modificar(Computadores? entidad);
+        Computadores? Borrar(Computadores? entidad);
     }
 }

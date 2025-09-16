@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace lib_repositorios.Interfaces
 {
-    public class IPagosAplicacion
+    public interface IPagosAplicacion
     {
         void Configurar(string StringConexion);
         List<Pagos> Listar();

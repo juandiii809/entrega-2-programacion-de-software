@@ -5,21 +5,22 @@ using Microsoft.EntityFrameworkCore;
 using ut_presentacion.Nucleo;
 
 namespace ut_presentacion.Repositorios
+    //cambiar los nombres y las modificaciones por algo bueno 
 {
     [TestClass]
-    public class CRUD
+    public class ComputadoresPrueba
     {
-        private readonly IConexion? iConexion;
-        private List<Componentes>? lista;
-        private Componente? entidad;
+        private readonly IConexion? IConexion;
+        private List<Computadores>? lista;
+        private Computadores? entidad;
 
 
-    
 
-        public CRUD()
+
+        public ComputadoresPrueba()
         {
-            iConexion = new Conexion();
-            iConexion.StringConexion = Configuracion.ObtenerValor("StringConexion");
+            IConexion = new Conexion();
+            IConexion.StringConexion = Configuracion.ObtenerValor("StringConexion");
         }
 
         [TestMethod]
@@ -33,37 +34,36 @@ namespace ut_presentacion.Repositorios
 
         public bool Listar()
         {
-            this.lista = this.iConexion!.Componentes!.ToList();
+            this.lista = this.IConexion!.Computadores!.ToList();
             return lista.Count > 0;
         }
-        
+
         public bool Guardar()
         {
             // Crear un nuevo Componente de ejemplo
-            this.entidad = new Componente
+            this.entidad = new Computadores
             {
                 Nombre = "Teclado",
-                Descripcion = "Teclado mecánico de prueba"
             };
 
-            this.iConexion!.Componentes!.Add(this.entidad);
-            this.iConexion!.SaveChanges();
+            this.IConexion!.Computadores!.Add(this.entidad);
+            this.IConexion!.SaveChanges();
             return true;
         }
 
         public bool Modificar()
         {
-            this.entidad!.Descripcion = "Teclado mecánico actualizado";
-            var entry = this.iConexion!.Entry<Componente>(this.entidad);
+            this.entidad!.Nombre="no se ";
+            var entry = this.IConexion!.Entry<Computadores>(this.entidad);
             entry.State = EntityState.Modified;
-            this.iConexion!.SaveChanges();
+            this.IConexion!.SaveChanges();
             return true;
         }
 
         public bool Borrar()
         {
-            this.iConexion!.Componentes!.Remove(this.entidad!);
-            this.iConexion!.SaveChanges();
+            this.IConexion!.Computadores!.Remove(this.entidad!);
+            this.IConexion!.SaveChanges();
             return true;
         }
     }
