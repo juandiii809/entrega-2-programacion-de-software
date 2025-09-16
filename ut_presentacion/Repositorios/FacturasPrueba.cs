@@ -32,7 +32,7 @@ namespace ut_presentacion.Repositorios
         }
 
         public bool Listar()
-        
+        {
             this.lista = this.iConexion!.Facturas!.ToList();
             return lista.Count > 0;
         }

@@ -12,7 +12,7 @@ namespace lib_dominio.Entidades
         public int Cantidad { get; set; }
         public int Producto { get; set; }
         public int Orden { get; set; }
-        public Productos? Productos { get; set; }
+        public Productos? _Producto { get; set; }
         public Orden_servicios? Orden_servicios { get; set; }
     }
 }

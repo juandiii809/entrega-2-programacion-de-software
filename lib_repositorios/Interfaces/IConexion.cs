@@ -9,7 +9,7 @@ namespace lib_repositorios.Interfaces
         string? StringConexion { get; set; }
 
         DbSet<Componentes>? Componentes { get; set; }
-        /*
+        
         DbSet<Garantias>? Garantias { get; set; }
         DbSet<Marcas>? Marcas { get; set; }
         DbSet<Pagos>? Pagos { get; set; }
@@ -25,7 +25,7 @@ namespace lib_repositorios.Interfaces
         DbSet<Productos>? Productos { get; set; }
         DbSet<Proveedores>? Proveedores { get; set; }
         DbSet<Facturas>? Facturas { get; set; }
-        */
+        
 
         EntityEntry<T> Entry<T>(T entity) where T : class;
         int SaveChanges();

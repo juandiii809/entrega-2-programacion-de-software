@@ -15,12 +15,12 @@ namespace lib_dominio.Entidades
         public int Servicio { get; set; }
         public int Cliente { get; set; }
         public int Empleado { get; set; }
-        public Servicios? Servicios { get; set; }
-        public Clientes? Clientes { get; set; }
-        public Empleados? Empleados { get; set; }
+        public Servicios? _Servicio { get; set; }
+        public Clientes? _Cliente { get; set; }
+        public Empleados? _Empleado { get; set; }
 
-        public List<Orden_productos>? Productos;
+        //public List<Orden_productos>? Productos;
 
-        public List<Facturas>? Facturas;
+        //public List<Facturas>? Facturas;
     }
 }

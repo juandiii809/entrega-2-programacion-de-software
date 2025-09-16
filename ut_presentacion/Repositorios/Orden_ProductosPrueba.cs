@@ -8,7 +8,7 @@ namespace ut_presentacion.Repositorios
 //cambiar los nombres y las modificaciones por algo bueno 
 {
     [TestClass]
-    public class Orden_ProductosPrueba
+    public class Orden_productosPrueba
     {
         private readonly IConexion? IConexion;
         private List<Orden_productos>? lista;
@@ -17,7 +17,7 @@ namespace ut_presentacion.Repositorios
 
 
 
-        public Orden_ProductosPrueba()
+        public Orden_productosPrueba()
         {
             IConexion = new Conexion();
             IConexion.StringConexion = Configuracion.ObtenerValor("StringConexion");
@@ -41,7 +41,7 @@ namespace ut_presentacion.Repositorios
         public bool Guardar()
         {
             // Crear un nuevo Componente de ejemplo
-            this.entidad = new Productos
+            this.entidad = new Orden_productos
             {
                 Cantidad = 10
             };

@@ -13,6 +13,6 @@ namespace lib_dominio.Entidades
         public string? Correo { get; set; }
         public string? Telefono { get; set; }
         public int Producto { get; set; }
-        public Productos? Productos { get; set; }
+        public Productos? _Producto { get; set; }
     }
 }

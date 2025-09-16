@@ -7,7 +7,7 @@ using ut_presentacion.Nucleo;
 namespace ut_presentacion.Repositorios
 {
     [TestClass]
-    public class Orden_ServiciosPrueba
+    public class Orden_serviciosPrueba
     {
         private readonly IConexion? iConexion;
         private List<Orden_servicios>? lista;
@@ -16,7 +16,7 @@ namespace ut_presentacion.Repositorios
 
 
 
-        public Orden_ServiciosPrueba()
+        public Orden_serviciosPrueba()
         {
             iConexion = new Conexion();
             iConexion.StringConexion = Configuracion.ObtenerValor("StringConexion");
@@ -32,6 +32,7 @@ namespace ut_presentacion.Repositorios
         }
 
         public bool Listar()
+        { 
         
             this.lista = this.iConexion!.Orden_servicios!.ToList();
             return lista.Count > 0;
@@ -42,8 +43,13 @@ namespace ut_presentacion.Repositorios
             // Crear un nuevo Componente de ejemplo
             this.entidad = new Orden_servicios
             {
+<<<<<<< HEAD:ut_presentacion/Repositorios/Orden_ServicosPrueba.cs
                 E = true,
                 Fecha = 2025/09/16
+=======
+                
+                Fecha = DateTime.Now
+>>>>>>> eb724d661213d8f48ce350f1d3d58d69f06785eb:ut_presentacion/Repositorios/Orden_serviciosPrueba.cs
                 
              
             };
@@ -56,7 +62,7 @@ namespace ut_presentacion.Repositorios
         public bool Modificar()
         {
             
-            this.entidad!.Fecha = "fecha actualizada";
+            this.entidad!.Fecha = DateTime.Today;
            
             var entry = this.iConexion!.Entry<Orden_servicios>(this.entidad);
             entry.State = EntityState.Modified;

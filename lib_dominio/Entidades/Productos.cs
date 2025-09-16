@@ -12,12 +12,12 @@ namespace lib_dominio.Entidades
         public string? Nombre { get; set; }
         public string? Descripcion { get; set; }
         public int Garantia { get; set; }
-        public Garantias? Garantias { get; set; }
+        public Garantias? _Garantia { get; set; }
 
-        public List<Inventarios>? Inventarios;
+        //public List<Inventarios>? Inventarios;
 
-        public List<Orden_Productos>? Orden_Productos;
+        //public List<Orden_productos>? Orden_Productos;
 
-        public List<Proveedores>? Proveedores;
+        //public List<Proveedores>? Proveedores;
     }
 }

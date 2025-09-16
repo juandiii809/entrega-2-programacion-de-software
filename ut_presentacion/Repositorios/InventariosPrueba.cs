@@ -3,11 +3,12 @@ using lib_repositorios.Implementaciones;
 using lib_repositorios.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using ut_presentacion.Nucleo;
+using lib_dominio.Entidades;
 
 namespace ut_presentacion.Repositorios
 {
     [TestClass]
-    public class InventariosPruebas
+    public class InventariosPrueba
     {
         private readonly IConexion? iConexion;
         private List<Inventarios>? lista;
@@ -16,7 +17,7 @@ namespace ut_presentacion.Repositorios
 
 
 
-        public InventariosPruebas()
+        public InventariosPrueba()
         {
             iConexion = new Conexion();
             iConexion.StringConexion = Configuracion.ObtenerValor("StringConexion");
@@ -32,8 +33,8 @@ namespace ut_presentacion.Repositorios
         }
 
         public bool Listar()
-        
-            this.lista = this.iConexion!.Inventarios!.ToList();
+        {
+            this.lista = this.iConexion!.Inventarios!.InventariosPrueba();
             return lista.Count > 0;
         }
 

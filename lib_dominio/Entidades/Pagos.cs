@@ -13,6 +13,6 @@ namespace lib_dominio.Entidades
         public decimal Monto { get; set; }
         public string? Tipo_Pago { get; set; }
 
-        public List<Facturas>? Facturas;
+        //public List<Facturas>? Facturas;
     }
 }

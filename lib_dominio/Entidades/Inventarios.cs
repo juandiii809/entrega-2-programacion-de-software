@@ -12,6 +12,6 @@ namespace lib_dominio.Entidades
         public string? Descripcion { get; set; }
         public int Piezas_Disponibles { get; set; }
         public int Producto { get; set; }
-        public Productos? Productos { get; set; }
+        public Productos? _Producto { get; set; }
     }
 }
