@@ -14,8 +14,8 @@ namespace lib_dominio.Entidades
         public string? Cedula { get; set; }
         public string? Correo { get; set; }
         public int Computador { get; set; }
-        public Computadores? Computadores { get; set; }
+        public Computadores? _Computador { get; set; }
 
-        public List<Orden_Servicios>? Orden_Servicios;
+        //public List<Orden_servicios>? Orden_servicios;
     }
 }

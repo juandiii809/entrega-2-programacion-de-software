@@ -15,8 +15,8 @@ namespace lib_dominio.Entidades
         public int Pago { get; set; }
         public int Garantia { get; set; }
         public int Orden { get; set; }
-        public Pagos? Pagos { get; set; }
-        public Garantias? Garantias { get; set; }
-        public Orden_Servicios? Orden_Servicios { get; set; }
+        public Pagos? _Pago { get; set; }
+        public Garantias? _Garantia { get; set; }
+        //public Orden_servicios? Orden_Servicios { get; set; }
     }
 }

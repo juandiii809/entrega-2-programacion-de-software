@@ -13,6 +13,6 @@ namespace lib_dominio.Entidades
         public string? Descripcion { get; set; }
         public decimal Precio { get; set; }
 
-        public List<Orden_Servicios>? Orden_Servicios;
+        //public List<Orden_servicios>? Orden_servicios;
     }
 }
