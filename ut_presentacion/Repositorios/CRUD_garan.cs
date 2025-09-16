@@ -10,8 +10,11 @@ namespace ut_presentacion.Repositorios
     public class CRUD
     {
         private readonly IConexion? iConexion;
-        private List<Computadores>? lista;
-        private Computadores? entidad;
+        private List<Garantias>? lista;
+        private Garantias? entidad;
+
+
+
 
         public CRUD()
         {
@@ -30,22 +33,28 @@ namespace ut_presentacion.Repositorios
 
         public bool Listar()
         {
-            this.lista = this.iConexion!.Computadores!.ToList();
+            this.lista = this.iConexion!.Garantias!.ToList();
             return lista.Count > 0;
         }
 
         public bool Guardar()
         {
-            this.entidad = EntidadesNucleo.Comidas()!;
-            this.iConexion!.Computadores!.Add(this.entidad);
+            // Crear un nuevo Componente de ejemplo
+            this.entidad = new Garantias
+            {
+                Nombre = "Teclado",
+                Descripcion = "Teclado mecánico de prueba"
+            };
+
+            this.iConexion!.Garantias!.Add(this.entidad);
             this.iConexion!.SaveChanges();
             return true;
         }
 
         public bool Modificar()
         {
-            this.entidad!.Pais = "Test";
-            var entry = this.iConexion!.Entry<Computadores>(this.entidad);
+            this.entidad!.Descripcion = "Teclado mecánico actualizado";
+            var entry = this.iConexion!.Entry<Garantias>(this.entidad);
             entry.State = EntityState.Modified;
             this.iConexion!.SaveChanges();
             return true;
@@ -53,7 +62,7 @@ namespace ut_presentacion.Repositorios
 
         public bool Borrar()
         {
-            this.iConexion!.Computadores!.Remove(this.entidad!);
+            this.iConexion!.Garantias!.Remove(this.entidad!);
             this.iConexion!.SaveChanges();
             return true;
         }
