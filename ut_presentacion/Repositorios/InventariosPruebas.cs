@@ -48,7 +48,7 @@ namespace ut_presentacion.Repositorios
 
             };
 
-            this.iConexion!.Facturas!.Add(this.entidad);
+            this.iConexion!.Inventarios!.Add(this.entidad);
             this.iConexion!.SaveChanges();
             return true;
         }

@@ -42,8 +42,8 @@ namespace ut_presentacion.Repositorios
             // Crear un nuevo Componente de ejemplo
             this.entidad = new Orden_servicios
             {
-                Ejecutar = true,
-                Fecha = "2025/09/16"
+                E = true,
+                Fecha = 2025/09/16
                 
              
             };

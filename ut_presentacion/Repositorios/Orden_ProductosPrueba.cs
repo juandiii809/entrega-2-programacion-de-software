@@ -53,7 +53,7 @@ namespace ut_presentacion.Repositorios
 
         public bool Modificar()
         {
-            this.entidad!.Cantida = 1000000;
+            this.entidad!.Cantidad = 1000000;
             var entry = this.IConexion!.Entry<Orden_productos>(this.entidad);
             entry.State = EntityState.Modified;
             this.IConexion!.SaveChanges();
