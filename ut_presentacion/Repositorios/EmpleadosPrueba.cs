@@ -5,18 +5,19 @@ using Microsoft.EntityFrameworkCore;
 using ut_presentacion.Nucleo;
 
 namespace ut_presentacion.Repositorios
+	//cambiar todos los nombres y modificaciones 
 {
 	[TestClass]
-	public class CRUD
+	public class EmpleadosPrueba
 	{
 		private readonly IConexion? iConexion;
-		private List<Marcas>? lista;
-		private Marcas? entidad;
+		private List<Empleados>? lista;
+		private Empleados? entidad;
 
 
 
 
-		public CRUD()
+		public EmpleadosPrueba() 
 		{
 			iConexion = new Conexion();
 			iConexion.StringConexion = Configuracion.ObtenerValor("StringConexion");
@@ -33,28 +34,28 @@ namespace ut_presentacion.Repositorios
 
 		public bool Listar()
 		{
-			this.lista = this.iConexion!.Marcas!.ToList();
+			this.lista = this.iConexion!.Empleados!.ToList();
 			return lista.Count > 0;
 		}
 
 		public bool Guardar()
 		{
 			// Crear un nuevo Componente de ejemplo
-			this.entidad = new Marcas
+			this.entidad = new Empleados
 			{
 				Nombre = "Teclado",
-				Descripcion = "Teclado mecánico de prueba"
+				
 			};
 
-			this.iConexion!.Marcas!.Add(this.entidad);
+			this.iConexion!.Empleados!.Add(this.entidad);
 			this.iConexion!.SaveChanges();
 			return true;
 		}
 
 		public bool Modificar()
 		{
-			this.entidad!.Descripcion = "Teclado mecánico actualizado";
-			var entry = this.iConexion!.Entry<Marcas>(this.entidad);
+			this.entidad!.Nombre="juan";
+			var entry = this.iConexion!.Entry<Empleados>(this.entidad);
 			entry.State = EntityState.Modified;
 			this.iConexion!.SaveChanges();
 			return true;
@@ -62,7 +63,7 @@ namespace ut_presentacion.Repositorios
 
 		public bool Borrar()
 		{
-			this.iConexion!.Garantias!.Remove(this.entidad!);
+			this.iConexion!.Empleados!.Remove(this.entidad!);
 			this.iConexion!.SaveChanges();
 			return true;
 		}

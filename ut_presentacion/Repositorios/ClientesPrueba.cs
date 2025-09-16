@@ -7,7 +7,7 @@ using ut_presentacion.Nucleo;
 namespace ut_presentacion.Repositorios
 {
     [TestClass]
-    public class CRUD
+    public class ClientesPrueba
     {
         private readonly IConexion? iConexion;
         private List<Clientes>? lista;
@@ -16,7 +16,7 @@ namespace ut_presentacion.Repositorios
 
 
 
-        public CRUD()
+        public ClientesPrueba()
         {
             iConexion = new Conexion();
             iConexion.StringConexion = Configuracion.ObtenerValor("StringConexion");
@@ -42,18 +42,18 @@ namespace ut_presentacion.Repositorios
             // Crear un nuevo Componente de ejemplo
             this.entidad = new Clientes
             {
-                Nombre = "Teclado",
-                Descripcion = "Teclado mecánico de prueba"
+                Nombre = "armando",
+                Apellido = "no se"
             };
 
-            this.iConexion!.Marcas!.Add(this.entidad);
+            this.iConexion!.Clientes!.Add(this.entidad);
             this.iConexion!.SaveChanges();
             return true;
         }
 
         public bool Modificar()
         {
-            this.entidad!.Descripcion = "Teclado mecánico actualizado";
+            this.entidad!.Apellido = "Teclado mecánico actualizado";
             var entry = this.iConexion!.Entry<Clientes>(this.entidad);
             entry.State = EntityState.Modified;
             this.iConexion!.SaveChanges();

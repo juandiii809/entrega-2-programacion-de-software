@@ -7,16 +7,16 @@ using ut_presentacion.Nucleo;
 namespace ut_presentacion.Repositorios
 {
 	[TestClass]
-	public class CRUD
+	public class ServiciosPrueba
 	{
 		private readonly IConexion? iConexion;
-		private List<Empleados>? lista;
-		private Empleados? entidad;
+		private List<Servicios>? lista;
+		private Servicios? entidad;
 
 
 
 
-		public CRUD() 
+		public ServiciosPrueba()
 		{
 			iConexion = new Conexion();
 			iConexion.StringConexion = Configuracion.ObtenerValor("StringConexion");
@@ -33,20 +33,20 @@ namespace ut_presentacion.Repositorios
 
 		public bool Listar()
 		{
-			this.lista = this.iConexion!.Empleados!.ToList();
+			this.lista = this.iConexion!.Servicios!.ToList();
 			return lista.Count > 0;
 		}
 
 		public bool Guardar()
 		{
 			// Crear un nuevo Componente de ejemplo
-			this.entidad = new Empleados
+			this.entidad = new Servicios
 			{
 				Nombre = "Teclado",
 				Descripcion = "Teclado mecánico de prueba"
 			};
 
-			this.iConexion!.Empleados!.Add(this.entidad);
+			this.iConexion!.Servicios!.Add(this.entidad);
 			this.iConexion!.SaveChanges();
 			return true;
 		}
@@ -54,7 +54,7 @@ namespace ut_presentacion.Repositorios
 		public bool Modificar()
 		{
 			this.entidad!.Descripcion = "Teclado mecánico actualizado";
-			var entry = this.iConexion!.Entry<Empleados>(this.entidad);
+			var entry = this.iConexion!.Entry<Servicios>(this.entidad);
 			entry.State = EntityState.Modified;
 			this.iConexion!.SaveChanges();
 			return true;
@@ -62,7 +62,7 @@ namespace ut_presentacion.Repositorios
 
 		public bool Borrar()
 		{
-			this.iConexion!.Empleados!.Remove(this.entidad!);
+			this.iConexion!.Servicios!.Remove(this.entidad!);
 			this.iConexion!.SaveChanges();
 			return true;
 		}
