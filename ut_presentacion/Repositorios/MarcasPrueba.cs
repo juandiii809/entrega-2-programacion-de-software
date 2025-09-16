@@ -42,6 +42,7 @@ namespace ut_presentacion.Repositorios
 			// Crear un nuevo Componente de ejemplo
 			this.entidad = new Marcas
 			{
+
 				Nombre = "Teclado",
 				Descripcion = "Teclado mecánico de prueba"
 			};
@@ -66,5 +67,5 @@ namespace ut_presentacion.Repositorios
 			this.iConexion!.SaveChanges();
 			return true;
 		}
-	} 6
+	} 
 }

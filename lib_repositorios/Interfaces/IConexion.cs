@@ -8,6 +8,8 @@ namespace lib_repositorios.Interfaces
     {
         string? StringConexion { get; set; }
 
+        DbSet<Componentes>? Componentes { get; set; }
+        /*
         DbSet<Garantias>? Garantias { get; set; }
         DbSet<Marcas>? Marcas { get; set; }
         DbSet<Pagos>? Pagos { get; set; }
@@ -17,12 +19,13 @@ namespace lib_repositorios.Interfaces
         DbSet<Empleados>? Empleados { get; set; }
         DbSet<Computadores>? Computadores { get; set; }
         DbSet<Inventarios>? Inventarios { get; set; }
-        DbSet<Componentes>? Componentes { get; set; }
+       
         DbSet<Orden_productos>? Orden_productos { get; set; }
         DbSet<Orden_servicios>? Orden_servicios { get; set; }
         DbSet<Productos>? Productos { get; set; }
         DbSet<Proveedores>? Proveedores { get; set; }
         DbSet<Facturas>? Facturas { get; set; }
+        */
 
         EntityEntry<T> Entry<T>(T entity) where T : class;
         int SaveChanges();
