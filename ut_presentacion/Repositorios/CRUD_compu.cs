@@ -9,7 +9,7 @@ namespace ut_presentacion.Repositorios
     [TestClass]
     public class CRUD
     {
-        private readonly IConexion? iConexion;
+        private readonly IConexion? IConexion;
         private List<Computadores>? lista;
         private Computadores? entidad;
 
@@ -18,8 +18,8 @@ namespace ut_presentacion.Repositorios
 
         public CRUD()
         {
-            iConexion = new Conexion();
-            iConexion.StringConexion = Configuracion.ObtenerValor("StringConexion");
+            IConexion = new Conexion();
+            IConexion.StringConexion = Configuracion.ObtenerValor("StringConexion");
         }
 
         [TestMethod]
@@ -33,7 +33,7 @@ namespace ut_presentacion.Repositorios
 
         public bool Listar()
         {
-            this.lista = this.iConexion!.Computadores!.ToList();
+            this.lista = this.IConexion!.Computadores!.ToList();
             return lista.Count > 0;
         }
 
@@ -46,24 +46,24 @@ namespace ut_presentacion.Repositorios
                 Descripcion = "Teclado mecánico de prueba"
             };
 
-            this.iConexion!.Computadores!.Add(this.entidad);
-            this.iConexion!.SaveChanges();
+            this.IConexion!.Computadores!.Add(this.entidad);
+            this.IConexion!.SaveChanges();
             return true;
         }
 
         public bool Modificar()
         {
             this.entidad!.Descripcion = "Teclado mecánico actualizado";
-            var entry = this.iConexion!.Entry<Computadoress>(this.entidad);
+            var entry = this.IConexion!.Entry<Computadores>(this.entidad);
             entry.State = EntityState.Modified;
-            this.iConexion!.SaveChanges();
+            this.IConexion!.SaveChanges();
             return true;
         }
 
         public bool Borrar()
         {
-            this.iConexion!.Computadores!.Remove(this.entidad!);
-            this.iConexion!.SaveChanges();
+            this.IConexion!.Computadores!.Remove(this.entidad!);
+            this.IConexion!.SaveChanges();
             return true;
         }
     }
