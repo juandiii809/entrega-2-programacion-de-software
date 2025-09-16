@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,12 +13,12 @@ namespace lib_dominio.Entidades
         public bool Estado { get; set; }
         public DateTime Fecha { get; set; }
         public decimal Precio { get; set; }
-        public int Servicio { get; set; }
-        public int Cliente { get; set; }
-        public int Empleado { get; set; }
-        public Servicios? _Servicio { get; set; }
-        public Clientes? _Cliente { get; set; }
-        public Empleados? _Empleado { get; set; }
+        public int servicio { get; set; }
+        public int cliente { get; set; }
+        public int empleado { get; set; }
+        [ForeignKey("servicio")]public Servicios? _Servicio { get; set; }
+        [ForeignKey("cliente")]public Clientes? _cliente { get; set; }
+        [ForeignKey("empleado")]public Empleados? _empleado { get; set; }
 
         //public List<Orden_productos>? Productos;
 
