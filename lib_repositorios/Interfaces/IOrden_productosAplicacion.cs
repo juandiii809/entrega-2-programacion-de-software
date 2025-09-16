@@ -10,9 +10,9 @@ namespace lib_repositorios.Interfaces
     public class IOrden_productosAplicacion
     {
         void Configurar(string StringConexion);
-        List<Orden_Productos> Listar();
-        Orden_Productos? Guardar(Orden_Productos? entidad);
-        Orden_Productos? Modificar(Orden_Productos? entidad);
-        Orden_Productos? Borrar(Orden_Productos? entidad);
+        List<Orden_productos> Listar();
+        Orden_productos? Guardar(Orden_productos? entidad);
+        Orden_productos? Modificar(Orden_productos? entidad);
+        Orden_productos? Borrar(Orden_productos? entidad);
     }
 }
