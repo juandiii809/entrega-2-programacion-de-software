@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using ut_presentacion.Nucleo;
 
 namespace ut_presentacion.Repositorios
+    //cambiar los nombres
 {
     [TestClass]
     public class PuestosPrueba
