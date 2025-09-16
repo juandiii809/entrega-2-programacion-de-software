@@ -43,7 +43,7 @@ namespace ut_presentacion.Repositorios
             // Crear un nuevo Componente de ejemplo
             this.entidad = new Pagos
             {
-                Fecha = "2025/02/12"
+                Fecha = DateTime.Now
             };
 
             this.IConexion!.Pagos!.Add(this.entidad);
@@ -53,7 +53,7 @@ namespace ut_presentacion.Repositorios
 
         public bool Modificar()
         {
-            this.entidad!.Fecha = "2025/10/12";
+            this.entidad!.Fecha = DateTime.Now;
             var entry = this.IConexion!.Entry<Pagos>(this.entidad);
             entry.State = EntityState.Modified;
             this.IConexion!.SaveChanges();

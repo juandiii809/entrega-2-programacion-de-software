@@ -16,7 +16,7 @@ namespace lib_dominio.Entidades
 
         public List<Inventarios>? Inventarios;
 
-        public List<Orden_Productos>? Orden_Productos;
+        public List<Orden_productos>? Orden_Productos;
 
         public List<Proveedores>? Proveedores;
     }

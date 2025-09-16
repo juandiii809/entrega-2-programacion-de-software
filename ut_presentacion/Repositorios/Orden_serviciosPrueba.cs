@@ -7,16 +7,16 @@ using ut_presentacion.Nucleo;
 namespace ut_presentacion.Repositorios
 {
     [TestClass]
-    public class InventariosPruebas
+    public class Orden_serviciosPrueba
     {
         private readonly IConexion? iConexion;
-        private List<Inventarios>? lista;
-        private Inventarios? entidad;
+        private List<Orden_servicios>? lista;
+        private Orden_servicios? entidad;
 
 
 
 
-        public InventariosPruebas()
+        public Orden_serviciosPrueba()
         {
             iConexion = new Conexion();
             iConexion.StringConexion = Configuracion.ObtenerValor("StringConexion");
@@ -32,33 +32,34 @@ namespace ut_presentacion.Repositorios
         }
 
         public bool Listar()
+        { 
         
-            this.lista = this.iConexion!.Inventarios!.ToList();
+            this.lista = this.iConexion!.Orden_servicios!.ToList();
             return lista.Count > 0;
         }
 
         public bool Guardar()
         {
             // Crear un nuevo Componente de ejemplo
-            this.entidad = new Inventarios
+            this.entidad = new Orden_servicios
             {
-
-
-                Descripcion = "holaa"
-
+                
+                Fecha = DateTime.Now
+                
+             
             };
 
-            this.iConexion!.Facturas!.Add(this.entidad);
+            this.iConexion!.Orden_servicios!.Add(this.entidad);
             this.iConexion!.SaveChanges();
             return true;
         }
 
         public bool Modificar()
         {
-
-            this.entidad!.Descripcion = "Desccripcion";
-
-            var entry = this.iConexion!.Entry<Inventarios>(this.entidad);
+            
+            this.entidad!.Fecha = DateTime.Today;
+           
+            var entry = this.iConexion!.Entry<Orden_servicios>(this.entidad);
             entry.State = EntityState.Modified;
             this.iConexion!.SaveChanges();
             return true;
@@ -66,7 +67,7 @@ namespace ut_presentacion.Repositorios
 
         public bool Borrar()
         {
-            this.iConexion!.Inventarios!.Remove(this.entidad!);
+            this.iConexion!.Orden_servicios!.Remove(this.entidad!);
             this.iConexion!.SaveChanges();
             return true;
         }
