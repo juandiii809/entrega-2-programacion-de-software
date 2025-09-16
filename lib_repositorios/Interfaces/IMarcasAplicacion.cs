@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace lib_repositorios.Interfaces
 {
-    public class IMarcasAplicacion
+    public interface IMarcasAplicacion
     {
         void Configurar(string StringConexion);
         List<Marcas> Listar();

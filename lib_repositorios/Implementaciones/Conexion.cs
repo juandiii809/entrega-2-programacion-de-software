@@ -32,7 +32,7 @@ namespace lib_repositorios.Implementaciones
         public DbSet<Pagos>? Pagos { get; set; }
         public DbSet<Facturas>? Facturas { get; set; }
         public DbSet<Inventarios>? Inventarios { get; set; }
-        public DbSet<Orden_productos>? Orden_productos { get; set; }
+        public DbSet<Orden_productosAplicacion>? Orden_productos { get; set; }
         public DbSet<Proveedores>? Proveedores { get; set; }
     }
 }

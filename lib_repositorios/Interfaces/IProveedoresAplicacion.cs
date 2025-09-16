@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace lib_repositorios.Interfaces
 {
-    public class IProveedoresAplicacion
+    public interface IProveedoresAplicacion
     {
         void Configurar(string StringConexion);
         List<Proveedores> Listar();
