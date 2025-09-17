@@ -34,7 +34,11 @@ namespace ut_presentacion.Repositorios
 
         public bool Listar()
         {
+<<<<<<< HEAD
             this.lista = this.iConexion!.Inventarios!.Inventarios_Prueba();
+=======
+            this.lista = this.iConexion!.Inventarios!.ToList();
+>>>>>>> 76e75565315737e7041585a70ff797752a276e5b
             return lista.Count > 0;
         }
 

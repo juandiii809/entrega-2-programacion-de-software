@@ -56,9 +56,9 @@ namespace ut_presentacion.Nucleo
             entidad.Fecha = DateTime.Now;
             entidad.Descripcion = "pruebas";
             entidad.Valor_total = 1000000m;
-            entidad.Pago = 1;
-            entidad.Garantia = 1;
-            entidad.Orden = 1;
+            entidad.pago = 1;
+            entidad.garantia = 1;
+            entidad.orden = 1;
             return entidad;
         }
 
@@ -75,7 +75,7 @@ namespace ut_presentacion.Nucleo
             var entidad = new Inventarios();
             entidad.Descripcion = "pruebas";
             entidad.Piezas_Disponibles = 50;
-            entidad.Producto = 1;
+            entidad.producto = 1;
             return entidad;
         }
 
@@ -91,8 +91,8 @@ namespace ut_presentacion.Nucleo
         {
             var entidad = new Orden_productos();
             entidad.Cantidad = 3;
-            entidad.Producto = 1;
-            entidad.Orden = 1;
+            entidad.producto = 1;
+            entidad.orden = 1;
             return entidad;
         }
 
@@ -102,9 +102,9 @@ namespace ut_presentacion.Nucleo
             entidad.Estado = true;
             entidad.Fecha = DateTime.Now;
             entidad.Precio = 1000000m;
-            entidad.Servicio = 1;
-            entidad.Cliente = 1;
-            entidad.Empleado = 1;
+            entidad.servicio = 1;
+            entidad.cliente = 1;
+            entidad.empleado = 1;
             return entidad;
         }
 
@@ -122,7 +122,7 @@ namespace ut_presentacion.Nucleo
             var entidad = new Productos();
             entidad.Nombre = "pruebas";
             entidad.Descripcion = "pruebas";
-            entidad.Garantia = 1;
+            entidad.garantia = 1;
             return entidad; 
         }
 
@@ -132,7 +132,7 @@ namespace ut_presentacion.Nucleo
             entidad.Nombre = "pruebas";
             entidad.Correo = "prueba";
             entidad.Telefono = "pruebas";
-            entidad.Producto = 1;
+            entidad.producto = 1;
             return entidad;
         }
 

@@ -43,13 +43,7 @@ namespace ut_presentacion.Repositorios
             // Crear un nuevo Componente de ejemplo
             this.entidad = new Orden_servicios
             {
-<<<<<<< HEAD:ut_presentacion/Repositorios/Orden_ServicosPrueba.cs
-                E = true,
-                Fecha = 2025/09/16
-=======
-                
-                Fecha = DateTime.Now
->>>>>>> eb724d661213d8f48ce350f1d3d58d69f06785eb:ut_presentacion/Repositorios/Orden_serviciosPrueba.cs
+                Precio = 150.7m
                 
              
             };

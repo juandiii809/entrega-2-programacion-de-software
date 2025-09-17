@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace lib_dominio.Entidades
 {
@@ -14,7 +15,7 @@ namespace lib_dominio.Entidades
         public string? Cedula { get; set; }
         public string? Correo { get; set; }
         public int Puesto { get; set; }
-        public Puestos? _Puesto { get; set; }
+        [ForeignKey("puesto")] public Puestos? _Puesto { get; set; }
 
         //public List<Orden_servicios>? Orden_Servicios;
     }
