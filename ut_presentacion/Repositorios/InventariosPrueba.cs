@@ -34,7 +34,7 @@ namespace ut_presentacion.Repositorios
 
         public bool Listar()
         {
-            this.lista = this.iConexion!.Inventarios!.InventariosPrueba();
+            this.lista = this.iConexion!.Inventarios!.Inventarios_Prueba();
             return lista.Count > 0;
         }
 
